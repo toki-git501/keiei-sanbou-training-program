@@ -599,18 +599,31 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
 @media (max-width: 768px) {
     .wrapper { flex-direction: column; }
     .sidebar {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: auto;
+        z-index: 1200;
     }
-    .sidebar-header { padding: 16px 12px; }
-    .sidebar-header h1, .sidebar-header p, .sidebar-nav span, .sidebar-nav li a { display: block; }
-    .sidebar-nav { max-height: 50vh; display: none; }
-    .sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    .sidebar-header {
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .logo-icon { display: none; }
+    .sidebar-header h1 { font-size: 0.95rem; margin: 0; }
+    .sidebar-header p { display: none; }
+    .sidebar-nav span, .sidebar-nav li a { display: block; }
+    .sidebar-nav { max-height: 60vh; display: none; background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%); }
+    .sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; margin: 0; }
     body.sidebar-open .sidebar-nav { display: block; }
     .sidebar-nav li a { padding: 8px 12px; font-size: 0.82rem; }
     .sidebar-nav li a i { margin-right: 8px; font-size: 1rem; }
-    .main-area { margin-left: 0; }
+    .main-area { margin-left: 0; margin-top: 56px; }
     .content { padding: 20px 16px; }
     .header-content { padding: 10px 16px; }
     h2 { font-size: 1.5rem; margin-bottom: 24px; }
