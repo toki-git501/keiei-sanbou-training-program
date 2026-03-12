@@ -611,11 +611,11 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
         padding: 10px 12px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         text-align: left;
     }
     .logo-icon { display: none; }
-    .sidebar-header h1 { font-size: 0.95rem; margin: 0; }
+    .sidebar-header h1 { display: none; }
     .sidebar-header p { display: none; }
     .sidebar-nav span, .sidebar-nav li a { display: block; }
     .sidebar-nav { max-height: 60vh; display: none; background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%); }
