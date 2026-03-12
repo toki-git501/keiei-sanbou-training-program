@@ -43,6 +43,16 @@ body {
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+ .sidebar-toggle {
+    display: none;
+    margin: 10px auto 0;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+ }
 
 .logo-icon {
     font-size: 2.5rem;
@@ -584,6 +594,47 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     .sidebar-nav li a i { margin: 0; font-size: 1.2rem; }
     .main-area { margin-left: 80px; }
     .footer-row { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .wrapper { flex-direction: column; }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .sidebar-header { padding: 16px 12px; }
+    .sidebar-header h1, .sidebar-header p, .sidebar-nav span, .sidebar-nav li a { display: block; }
+    .sidebar-nav { max-height: 50vh; display: none; }
+    .sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    body.sidebar-open .sidebar-nav { display: block; }
+    .sidebar-nav li a { padding: 8px 12px; font-size: 0.82rem; }
+    .sidebar-nav li a i { margin-right: 8px; font-size: 1rem; }
+    .main-area { margin-left: 0; }
+    .content { padding: 20px 16px; }
+    .header-content { padding: 10px 16px; }
+    h2 { font-size: 1.5rem; margin-bottom: 24px; }
+    .presentation-slide { aspect-ratio: auto; margin-bottom: 30px; }
+    .slide-inner { padding: 20px; }
+    .slide-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .element-grid { grid-template-columns: 1fr; }
+    .kpi-pillars { grid-template-columns: 1fr 1fr; }
+    .special-kpi { grid-template-columns: 1fr; }
+    .management-card { grid-column: span 1; }
+    .hearing-grid { grid-template-columns: 1fr 1fr; }
+    .comparison-table th, .comparison-table td { font-size: 0.85rem; padding: 10px; }
+}
+
+@media (max-width: 576px) {
+    .sidebar-nav { max-height: 45vh; }
+    .sidebar-nav li a { padding: 6px 10px; font-size: 0.78rem; }
+    .sidebar-nav ul { padding: 4px 0; }
+    .content { padding: 16px 12px; }
+    .slide-inner { padding: 16px; }
+    .kpi-pillars, .hearing-grid { grid-template-columns: 1fr; }
+    .logic-columns { gap: 10px; }
+    .logic-box { padding: 16px; width: 100%; }
+    .formula-flex { gap: 12px; }
 }
 
 /* ===== ヒアリングシート ===== */

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.sidebar-nav > ul > li > a');
     const progressBar = document.getElementById('scroll-progress');
     const dateElement = document.getElementById('current-date');
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
 
     // 1. スライドに自動でIDを付与 (slide-01, slide-02...)
     const slides = document.querySelectorAll('.presentation-slide');
@@ -97,6 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: targetSection.offsetTop - 70,
                     behavior: 'smooth'
                 });
+            }
+            if (window.innerWidth <= 768) {
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+    });
+
+    // モバイルのサイドバー開閉
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', () => {
+            document.body.classList.toggle('sidebar-open');
+        });
+    }
+
+    // スライドリンクを押したらメニューを閉じる
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                document.body.classList.remove('sidebar-open');
             }
         });
     });
