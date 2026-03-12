@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('scroll-progress');
     const dateElement = document.getElementById('current-date');
     const sidebarToggles = document.querySelectorAll('.sidebar-toggle');
+    const MOBILE_BREAKPOINT = 1024;
 
     // 1. スライドに自動でIDを付与 (slide-01, slide-02...)
     const slides = document.querySelectorAll('.presentation-slide');
@@ -113,6 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 強制モバイル判定（CSSが効かない環境対策）
+    const setMobileClass = () => {
+        if (window.innerWidth <= MOBILE_BREAKPOINT) {
+            document.body.classList.add('is-mobile');
+        } else {
+            document.body.classList.remove('is-mobile');
+            document.body.classList.remove('sidebar-open');
+        }
+    };
+    setMobileClass();
+    window.addEventListener('resize', setMobileClass);
 
     // スライドリンクを押したらメニューを閉じる
     document.querySelectorAll('.sidebar-nav a').forEach(link => {

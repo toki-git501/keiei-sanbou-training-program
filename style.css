@@ -63,6 +63,30 @@ body {
     cursor: pointer;
 }
 
+/* 強制モバイル判定時のサイドバー制御 */
+.is-mobile .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100vh !important;
+    background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%) !important;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    z-index: 1200;
+    pointer-events: none;
+}
+.is-mobile .sidebar-header { display: none; }
+.is-mobile .sidebar-nav { display: block; max-height: 80vh; padding-top: 56px; }
+.is-mobile .sidebar-toggle-mobile { display: inline-flex; align-items: center; justify-content: center; }
+.is-mobile .sidebar-toggle { display: none; }
+.is-mobile.sidebar-open .sidebar {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+.is-mobile.sidebar-open .sidebar-nav { display: block; }
+
 .logo-icon {
     font-size: 2.5rem;
     color: var(--accent-color);
