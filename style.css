@@ -43,7 +43,7 @@ body {
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
- .sidebar-toggle {
+.sidebar-toggle {
     display: none;
     margin: 10px auto 0;
     background: rgba(255,255,255,0.1);
@@ -52,7 +52,16 @@ body {
     border-radius: 6px;
     padding: 6px 10px;
     cursor: pointer;
- }
+}
+.sidebar-toggle-mobile {
+    display: none;
+    background: #1a2a3a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
 
 .logo-icon {
     font-size: 2.5rem;
@@ -602,25 +611,24 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
         position: fixed;
         top: 0;
         left: 0;
-        width: 0 !important;
-        height: 0 !important;
-        background: transparent !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%) !important;
         overflow: hidden !important;
         z-index: 1200;
         pointer-events: none !important;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
     }
     .sidebar-header {
-        padding: 0;
+        padding: 16px 12px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1300;
+        justify-content: space-between;
+        position: static;
     }
     .logo-icon { display: none; }
-    .sidebar-header h1 { display: none; }
+    .sidebar-header h1 { font-size: 1rem; margin: 0; }
     .sidebar-header p { display: none; }
     .sidebar-nav span, .sidebar-nav li a { display: block; }
     .sidebar-nav {
@@ -629,12 +637,14 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
         background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%);
         padding-top: 56px;
     }
-    .sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; margin: 0; }
+    .sidebar-toggle { display: none; }
+    .sidebar-toggle-mobile { display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; }
     body.sidebar-open .sidebar {
         width: 100% !important;
         height: 100vh !important;
         background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%) !important;
         pointer-events: auto !important;
+        transform: translateX(0);
     }
     body.sidebar-open .sidebar-nav { display: block !important; }
     .sidebar-nav li a { padding: 8px 12px; font-size: 0.82rem; }
