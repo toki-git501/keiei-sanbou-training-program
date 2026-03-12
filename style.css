@@ -602,12 +602,12 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 0;
-        background: transparent;
-        overflow: hidden;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+        overflow: hidden !important;
         z-index: 1200;
-        pointer-events: none;
+        pointer-events: none !important;
     }
     .sidebar-header {
         padding: 0;
@@ -625,20 +625,21 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     .sidebar-nav span, .sidebar-nav li a { display: block; }
     .sidebar-nav {
         max-height: 80vh;
-        display: none;
+        display: none !important;
         background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%);
         padding-top: 56px;
     }
     .sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; margin: 0; }
     body.sidebar-open .sidebar {
-        height: 100vh;
-        background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%);
-        pointer-events: auto;
+        width: 100% !important;
+        height: 100vh !important;
+        background: linear-gradient(180deg, #1a2a3a 0%, #0d151d 100%) !important;
+        pointer-events: auto !important;
     }
-    body.sidebar-open .sidebar-nav { display: block; }
+    body.sidebar-open .sidebar-nav { display: block !important; }
     .sidebar-nav li a { padding: 8px 12px; font-size: 0.82rem; }
     .sidebar-nav li a i { margin-right: 8px; font-size: 1rem; }
-    .main-area { margin-left: 0; margin-top: 0; }
+    .main-area { margin-left: 0 !important; margin-top: 0; }
     .content { padding: 20px 16px; }
     .header-content { padding: 10px 16px; }
     h2 { font-size: 1.5rem; margin-bottom: 24px; }
