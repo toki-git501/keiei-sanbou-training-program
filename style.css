@@ -1,6 +1,6 @@
 /* 基本変数 */
 :root {
-    --sidebar-width: 280px;
+    --sidebar-width: 240px;
     --primary-color: #1a2a3a;
     --accent-color: #3498db;
     --accent-dark: #2980b9;
@@ -197,6 +197,18 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     overflow: hidden;
     scroll-margin-top: 90px;
+}
+
+/* デスクトップでスライドが1画面に収まるよう調整 */
+@media (min-width: 993px) {
+    .content { padding: 28px 36px; max-width: 1200px; }
+    .section { margin-bottom: 70px; }
+    h2 { font-size: 1.8rem; margin-bottom: 24px; }
+    .presentation-slide {
+        max-width: calc((100vh - 240px) * 16 / 9);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .slide-inner {
