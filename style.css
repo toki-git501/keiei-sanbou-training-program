@@ -263,6 +263,8 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .slide-footer {
