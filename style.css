@@ -203,19 +203,20 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
 @media (min-width: 993px) {
     .content { padding: 24px 32px; max-width: 1200px; }
     .section { margin-bottom: 60px; }
-    h2 { font-size: 1.75rem; margin-bottom: 20px; }
+    h2 { font-size: 1.7rem; margin-bottom: 18px; }
     /* 画面内にスライドが完全に収まるよう高さ基準で制限 */
     .presentation-slide {
-        height: calc(100vh - 220px);
-        max-height: calc(100vh - 220px);
+        height: calc(100vh - 260px);
+        max-height: calc(100vh - 260px);
         width: 100%;
-        max-width: calc((100vh - 220px) * 16 / 9);
+        max-width: calc((100vh - 260px) * 16 / 9);
         margin-left: auto;
         margin-right: auto;
     }
-    .slide-inner { padding: 24px 32px; }
-    .slide-header { margin-bottom: 18px; }
-    .slide-footer { padding-top: 10px; }
+    .slide-inner { padding: 18px 26px; }
+    .slide-header { margin-bottom: 12px; }
+    .slide-title { font-size: 1.2rem; }
+    .slide-footer { padding-top: 8px; font-size: 0.7rem; }
 }
 
 .slide-inner {
