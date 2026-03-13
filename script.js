@@ -13,6 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.id = `slide-${slideNumber}`;
     });
 
+    // ズーム（拡大・縮小）機能
+    let currentScale = 1.0;
+    const zoomValDisplay = document.getElementById('zoom-val');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const zoomResetBtn = document.getElementById('zoom-reset');
+
+    const updateScale = (newScale) => {
+        currentScale = Math.min(Math.max(newScale, 0.5), 1.5); // 50%〜150%
+        if (zoomValDisplay) {
+            zoomValDisplay.textContent = `${Math.round(currentScale * 100)}%`;
+        }
+        slides.forEach(slide => {
+            slide.style.transform = `scale(${currentScale})`;
+            slide.style.transformOrigin = 'top center';
+        });
+    };
+
+    if (zoomInBtn) zoomInBtn.addEventListener('click', () => updateScale(currentScale + 0.1));
+    if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => updateScale(currentScale - 0.1));
+    if (zoomResetBtn) zoomResetBtn.addEventListener('click', () => updateScale(1.0));
+
     // 2. サイドバーのスライドリスト項目にクリックイベントを設定
     // テキスト内の番号（01, 02...）を抽出してジャンプさせる堅牢なロジック
     const sidebarSlideItems = document.querySelectorAll('.sidebar-nav ul ul li');

@@ -147,6 +147,35 @@ body {
 .breadcrumb span:last-child { color: var(--primary-color); font-weight: 600; }
 
 .header-right { display: flex; align-items: center; gap: 20px; }
+
+/* ズームコントロール */
+.zoom-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 4px 6px;
+}
+.zoom-btn {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+}
+.zoom-btn:hover { background: #e9f2fb; }
+.zoom-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    min-width: 52px;
+    text-align: center;
+}
 .date-badge {
     font-size: 0.85rem;
     background: #e1f0fa;
@@ -676,6 +705,7 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     .main-area { margin-left: 0 !important; margin-top: 0; }
     .content { padding: 20px 16px; }
     .header-content { padding: 10px 16px; }
+    .zoom-controls { display: none; }
     h2 { font-size: 1.5rem; margin-bottom: 24px; }
     .presentation-slide { aspect-ratio: auto; margin-bottom: 30px; }
     .slide-inner { padding: 20px; }
