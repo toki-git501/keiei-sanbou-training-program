@@ -199,29 +199,6 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     scroll-margin-top: 90px;
 }
 
-/* デスクトップでスライドが1画面に収まるよう調整 */
-@media (min-width: 993px) {
-    .content { padding: 24px 32px; max-width: 1200px; }
-    .section { margin-bottom: 60px; }
-    h2 { font-size: 1.7rem; margin-bottom: 18px; }
-    /* 画面内にスライドが完全に収まるよう高さ基準で制限 */
-    .presentation-slide {
-        height: calc(100vh - 320px);
-        max-height: calc(100vh - 320px);
-        width: 100%;
-        max-width: calc((100vh - 320px) * 16 / 9);
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .slide-inner {
-        padding: 16px 22px;
-        transform: scale(0.92);
-        transform-origin: top center;
-    }
-    .slide-header { margin-bottom: 10px; }
-    .slide-title { font-size: 1.15rem; }
-    .slide-footer { padding-top: 6px; font-size: 0.68rem; }
-}
 
 .slide-inner {
     height: 100%;
