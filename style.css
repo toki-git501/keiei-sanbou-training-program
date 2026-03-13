@@ -1,6 +1,6 @@
 /* 基本変数 */
 :root {
-    --sidebar-width: 240px;
+    --sidebar-width: 280px;
     --primary-color: #1a2a3a;
     --accent-color: #3498db;
     --accent-dark: #2980b9;
@@ -198,7 +198,6 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
     overflow: hidden;
     scroll-margin-top: 90px;
 }
-
 
 .slide-inner {
     height: 100%;
