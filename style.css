@@ -261,10 +261,11 @@ h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 40px; }
 .slide-body {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 0;
     overflow: auto;
+    padding-top: 10px;
 }
 
 .slide-footer {
